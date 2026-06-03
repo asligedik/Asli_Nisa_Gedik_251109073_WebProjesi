@@ -12,23 +12,23 @@ Hocam, bu projede şu teknolojileri kullandım:
 Proje başlangıcında, Express sunucusunu açıyoruz , kullanıcı isteklerini alıyoruz ve MySQL'den çektiğimiz verilerle HTML sayfalarını dinamik olarak oluşturuyoruz
 Projeyi çalıştırmak için
 
-# Önce npm paketlerini yükledim
+Önce npm paketlerini yükledim
 
 npm install
 
-# MySQL'de sema.sql dosyasını çalıştırarak tabloları oluşturdum
+MySQL'de sema.sql dosyasını çalıştırarak tabloları oluşturdum
 
-# Sonra config/veritabani.js dosyasında kendi MySQL bilgilerimi girdim
-
-# Sunucuyu başlattığımda
+Sonra config/veritabani.js dosyasında kendi MySQL bilgilerimi girdim
+```
+Sunucuyu başlattığımda
 
 npm start
 
-# Tarayıcıda şu adreste açılıyor
+Tarayıcıda şu adreste açılıyor
 
 http://localhost:3000
 
-```
+
 
 Hocam, projede şu özellikleri gerçekleştirdim:
 
