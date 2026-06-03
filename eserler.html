@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eserlerimiz | El Sanatları Atölyesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="a-ust-kisim">
+        <a href="kayitol.html" id="a-ust-buton" class="a-giris-butonu">
+            <i class="fa-solid fa-user-plus"></i> Kayıt Ol
+        </a>
+
+        <div class="a-baslik">
+            <h1>Eserlerimiz</h1>
+            <p>Atölyemizde üretilen el yapımı eserler ve fiyat listesi</p>
+        </div>
+
+        <nav class="a-menu">
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li class="a-hizmetlerimiz-acilir-menusu">
+                    <a href="#">Atölyelerimiz</a>
+                    <ul>
+                        <li><a href="kayitol.html">Seramik</a></li>
+                        <li><a href="kayitol.html">Dokuma</a></li>
+                        <li><a href="kayitol.html">Cam ve Mozaik</a></li>
+                    </ul>
+                </li>
+                <li><a href="eserler.html" class="a-korumali-baglanti" data-hedef="eserler.html">Eserlerimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="a-arka-plan">
+        <div class="a-icerikler">
+
+            <p id="a-durum-mesaji" class="a-durum-mesaji" style="display:none;"></p>
+
+            <div id="a-eserler-kilitli" class="a-spot-bilgi a-kilit-mesaji" style="display:none;">
+                <i class="fa-solid fa-lock"></i>
+                Eserlerimiz sayfasını görüntülemek için giriş yapmanız gerekmektedir.
+                <br><br>
+                <a href="girisyap.html" class="a-giris-link-butonu">Giriş Yap</a>
+                &nbsp;
+                <a href="kayitol.html" class="a-giris-link-butonu">Kayıt Ol</a>
+            </div>
+
+            <section id="a-eserler-icerik" style="display:none;">
+                <h2 class="a-icerik">El Yapımı Eser Kataloğu</h2>
+                <p class="a-icerik">Aşağıdaki tabloda atölyelerimizde üretilen eserlerin güncel fiyat ve stok bilgilerini görebilirsiniz.</p>
+
+                <div class="a-tablo" style="margin-top: 30px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Eser Adı</th>
+                                <th>Atölye</th>
+                                <th>Açıklama</th>
+                                <th>Fiyat (₺)</th>
+                                <th>Stok</th>
+                            </tr>
+                        </thead>
+                        <tbody id="a-eserler-tablosu"></tbody>
+                    </table>
+                </div>
+
+                <div id="a-eserler-kartlar" class="a-kartlar" style="margin-top: 50px;"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="a-alt-menu">
+        <p>&copy; 2026 Aslı El Sanatları Atölyesi — 251109073</p>
+    </footer>
+
+    <script src="js/a-oturum.js"></script>
+    <script src="js/a-eserler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const oturum = await aOturumKontrol();
+
+            if (oturum.basarili && oturum.kullanici && oturum.kullanici.rol === 'admin') {
+                const menu = document.querySelector('.a-menu ul');
+                const li = document.createElement('li');
+                li.innerHTML = '<a href="admin.html"><i class="fa-solid fa-gear"></i> Admin</a>';
+                menu.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>

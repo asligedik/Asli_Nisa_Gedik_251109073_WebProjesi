@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | El Sanatları Atölyesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="a-ust-kisim">
+        <a href="kayitol.html" id="a-ust-buton" class="a-giris-butonu"><i class="fa-solid fa-user-plus"></i> Kayıt Ol</a>
+
+        <div class="a-baslik">
+            <h1>Aslı El Sanatları Atölyesi</h1>
+            <p>Geleneksel el emeğini modern atölye deneyimiyle buluşturuyoruz</p>
+        </div>
+
+        <nav class="a-menu">
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li class="a-hizmetlerimiz-acilir-menusu">
+                    <a href="#">Atölyelerimiz</a>
+                    <ul>
+                        <li><a href="kayitol.html">Seramik</a></li>
+                        <li><a href="kayitol.html">Dokuma</a></li>
+                        <li><a href="kayitol.html">Cam ve Mozaik</a></li>
+                    </ul>
+                </li>
+                <li><a href="eserler.html" class="a-korumali-baglanti" data-hedef="eserler.html">Eserlerimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="a-arka-plan">
+        <div class="a-icerikler">
+
+            <p id="a-durum-mesaji" class="a-durum-mesaji" style="display:none;"></p>
+
+            <section class="a-icerik">
+                <h2>Bize Ulaşın</h2>
+                <p>
+                    Her türlü soru, görüş, öneri veya atölye kayıt işlemleri için aşağıdaki formu kullanarak bize mesaj atabilirsiniz. 
+                    En kısa sürede e-posta veya telefon yoluyla size dönüş yapacağız.
+                </p>
+            </section>
+
+            <div class="a-iletisim-yan">
+                <!-- Sol Bölüm: İletişim Formu (Radio Button ve Select/Option Zorunludur) -->
+                <section class="a-sag">
+                    <h2><i class="fa-solid fa-envelope-open-text"></i> İletişim Formu</h2>
+                    <form id="a-iletisim-formu" class="a-iletisim-form">
+                        
+                        <label for="a-iletisim-ad">Ad Soyad</label>
+                        <input type="text" id="a-iletisim-ad" required placeholder="Adınızı ve soyadınızı giriniz">
+
+                        <label for="a-iletisim-eposta">E-posta Adresi</label>
+                        <input type="email" id="a-iletisim-eposta" required placeholder="eposta@adresiniz.com">
+
+                        <label for="a-iletisim-konu">İlgi Duyduğunuz Atölye / Konu</label>
+                        <select id="a-iletisim-konu" required>
+                            <option value="">Seçim yapınız</option>
+                            <option value="Seramik Atölyesi">Seramik Atölyesi Çalışmaları</option>
+                            <option value="Dokuma ve Tekstil Atölyesi">Dokuma ve Tekstil Atölyesi Çalışmaları</option>
+                            <option value="Cam ve Mozaik Atölyesi">Cam ve Mozaik Atölyesi Çalışmaları</option>
+                            <option value="Genel Bilgi Talebi">Genel Bilgi Talebi</option>
+                        </select>
+
+                        <label>Tercih Ettiğiniz İletişim Kanalı</label>
+                        <div class="a-iletisim-secenek-kutu">
+                            <input type="radio" id="a-iletisim-turu-eposta" name="a-iletisim-turu" value="E-posta" checked>
+                            <label for="a-iletisim-turu-eposta" class="a-iletisim-radio-etiket">E-posta</label>
+                            
+                            <input type="radio" id="a-iletisim-turu-telefon" name="a-iletisim-turu" value="Telefon">
+                            <label for="a-iletisim-turu-telefon" class="a-iletisim-radio-etiket">Telefon</label>
+                        </div>
+
+                        <label for="a-iletisim-mesaj">Mesajınız</label>
+                        <textarea id="a-iletisim-mesaj" rows="5" required placeholder="Mesajınızı detaylıca yazınız..."></textarea>
+
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Gönder</button>
+                    </form>
+                </section>
+
+                <!-- Sağ Bölüm: İletişim Bilgileri ve Google Harita Konumu (iframe zorunludur) -->
+                <section class="a-konum">
+                    <h2><i class="fa-solid fa-map-location-dot"></i> Atölye Konumumuz</h2>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <p style="font-size:16px; margin: 8px 0;">
+                            <i class="fa-solid fa-location-dot" style="color: #c39bff; width: 20px;"></i> 
+                            Osmanağa Mah. Söğütlüçeşme Cd. No:12, Kadıköy / İstanbul
+                        </p>
+                        <p style="font-size:16px; margin: 8px 0;">
+                            <i class="fa-solid fa-phone" style="color: #c39bff; width: 20px;"></i> 
+                            +90 212 000 00 00
+                        </p>
+                        <p style="font-size:16px; margin: 8px 0;">
+                            <i class="fa-solid fa-envelope" style="color: #c39bff; width: 20px;"></i> 
+                            info@asliatolye.com
+                        </p>
+                    </div>
+
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.650275815779!2d29.023253576579624!3d40.98913982057904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8726b2165c7%3A0xe1d61998f48039e1!2sKad%C4%B1k%C3%B6y%20Bo%C4%9Fa%20Heykeli!5e0!3m2!1str!2str!4v1717235000000!5m2!1str!2str" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="a-alt-menu">
+        <p>
+            <i class="fa-solid fa-location-dot"></i> İstanbul &nbsp;|&nbsp;
+            <i class="fa-solid fa-phone"></i> 0212 000 00 00 &nbsp;|&nbsp;
+            <i class="fa-solid fa-envelope"></i> info@asliatolye.com
+        </p>
+        <p>&copy; 2026 Aslı El Sanatları Atölyesi — 251109073</p>
+    </footer>
+
+    <script src="js/a-oturum.js"></script>
+    <script src="js/a-iletisim.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const oturum = await aOturumKontrol();
+            aUstButonGuncelle(document.getElementById('a-ust-buton'), oturum);
+            aKorumaliBaglantilariBagla();
+
+            if (oturum.basarili && oturum.kullanici && oturum.kullanici.rol === 'admin') {
+                const menu = document.querySelector('.a-menu ul');
+                const li = document.createElement('li');
+                li.innerHTML = '<a href="admin.html"><i class="fa-solid fa-gear"></i> Admin</a>';
+                menu.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>

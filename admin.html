@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli | Eser Yönetimi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="a-ust-kisim">
+        <a href="index.html" id="a-ust-buton" class="a-giris-butonu a-cikis-modu">
+            <i class="fa-solid fa-house"></i> Anasayfa
+        </a>
+
+        <div class="a-baslik">
+            <h1>Admin Paneli — Eser Yönetimi</h1>
+            <p>Sadece admin kullanıcılar eser ekleyebilir, güncelleyebilir ve silebilir</p>
+        </div>
+
+        <nav class="a-menu">
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="eserler.html">Eserlerimiz</a></li>
+                <li><a href="admin.html">Admin Paneli</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="a-arka-plan">
+        <div class="a-icerikler">
+
+            <p id="a-durum-mesaji" class="a-durum-mesaji" style="display:none;"></p>
+
+            <div id="a-admin-yetkisiz" class="a-spot-bilgi a-kilit-mesaji" style="display:none;">
+                <i class="fa-solid fa-ban"></i>
+                Bu sayfaya erişim yetkiniz bulunmamaktadır. Sadece admin kullanıcılar girebilir.
+                <br><br>
+                <a href="girisyap.html?yonlendir=admin" class="a-giris-link-butonu">Admin Girişi</a>
+            </div>
+
+            <section id="a-admin-icerik" style="display:none;">
+
+                <h2 class="a-icerik" id="a-eser-form-baslik">Yeni Eser Ekle</h2>
+                <form id="a-eser-formu" class="a-iletisim-form a-admin-form">
+                    <input type="hidden" id="a-eser-id" value="">
+
+                    <label for="a-eser-ad">Eser Adı</label>
+                    <input type="text" id="a-eser-ad" required>
+
+                    <label for="a-eser-aciklama">Açıklama</label>
+                    <textarea id="a-eser-aciklama" rows="3"></textarea>
+
+                    <label for="a-eser-fiyat">Fiyat (₺)</label>
+                    <input type="number" id="a-eser-fiyat" step="0.01" min="0" required>
+
+                    <label for="a-eser-stok">Stok</label>
+                    <input type="number" id="a-eser-stok" min="0" required>
+
+                    <label for="a-eser-atolye">Atölye</label>
+                    <select id="a-eser-atolye" required></select>
+
+                    <button type="submit" id="a-eser-kaydet-butonu">Eser Ekle</button>
+                    <button type="button" id="a-eser-iptal-butonu" class="a-iptal-butonu" style="display:none;">İptal</button>
+                </form>
+
+                <h2 class="a-icerik" style="margin-top:40px;">Kayıtlı Eserler</h2>
+                <div class="a-tablo">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Eser Adı</th>
+                                <th>Atölye</th>
+                                <th>Fiyat (₺)</th>
+                                <th>Stok</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody id="a-admin-eser-tablosu"></tbody>
+                    </table>
+                </div>
+
+                <h2 class="a-icerik" style="margin-top:40px;">Kayıtlı Kullanıcılar</h2>
+                <div class="a-tablo">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ad Soyadı</th>
+                                <th>E-posta</th>
+                                <th>Rol</th>
+                                <th>Kayıt Tarihi</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody id="a-admin-kullanici-tablosu"></tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="a-alt-menu">
+        <p>&copy; 2026 Aslı El Sanatları Atölyesi — 251109073</p>
+    </footer>
+
+    <script src="js/a-oturum.js"></script>
+    <script src="js/a-admin.js"></script>
+</body>
+</html>

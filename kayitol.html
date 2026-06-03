@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol | El Sanatları Atölyesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="a-ust-kisim">
+        <a href="kayitol.html" id="a-ust-buton" class="a-giris-butonu">
+            <i class="fa-solid fa-user-plus"></i> Kayıt Ol
+        </a>
+
+        <div class="a-baslik">
+            <h1>Kayıt Ol</h1>
+            <p>Atölyemize üye olun ve el sanatları dünyasına katılın</p>
+        </div>
+
+        <nav class="a-menu">
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li class="a-hizmetlerimiz-acilir-menusu">
+                    <a href="#">Atölyelerimiz</a>
+                    <ul>
+                        <li><a href="kayitol.html">Seramik</a></li>
+                        <li><a href="kayitol.html">Dokuma</a></li>
+                        <li><a href="kayitol.html">Cam ve Mozaik</a></li>
+                    </ul>
+                </li>
+                <li><a href="eserler.html" class="a-korumali-baglanti" data-hedef="eserler.html">Eserlerimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="a-arka-plan">
+        <div class="a-icerikler">
+
+            <p id="a-durum-mesaji" class="a-durum-mesaji" style="display:none;"></p>
+
+            <section id="a-kayit-kutusu" class="a-uyelik-kutu">
+                <h2><i class="fa-solid fa-user-plus"></i> Yeni Üyelik</h2>
+                <form id="a-kayit-formu" class="a-iletisim-form">
+                    <label for="a-kayit-ad">Ad Soyad</label>
+                    <input type="text" id="a-kayit-ad" required>
+
+                    <label for="a-kayit-eposta">E-posta</label>
+                    <input type="email" id="a-kayit-eposta" required>
+
+                    <label for="a-kayit-sifre">Şifre</label>
+                    <input type="password" id="a-kayit-sifre" required minlength="6">
+
+                    <button type="submit">Kayıt Ol</button>
+                </form>
+                <p class="a-sayfa-gecisi">
+                    Zaten hesabınız var mı?
+                    <a href="girisyap.html">Giriş Yap</a>
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="a-alt-menu">
+        <p>&copy; 2026 Aslı El Sanatları Atölyesi — 251109073</p>
+    </footer>
+
+    <script src="js/a-oturum.js"></script>
+    <script src="js/a-uyelik-ortak.js"></script>
+    <script src="js/a-kayitol.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const oturum = await aOturumKontrol();
+            aKorumaliBaglantilariBagla();
+
+            if (oturum.basarili && oturum.kullanici && oturum.kullanici.rol === 'admin') {
+                const menu = document.querySelector('.a-menu ul');
+                const li = document.createElement('li');
+                li.innerHTML = '<a href="admin.html"><i class="fa-solid fa-gear"></i> Admin</a>';
+                menu.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>

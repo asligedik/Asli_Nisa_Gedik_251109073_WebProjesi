@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sanatları Atölyesi | Anasayfa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="a-ust-kisim">
+        <a href="kayitol.html" id="a-ust-buton" class="a-giris-butonu"><i class="fa-solid fa-user-plus"></i> Kayıt Ol</a>
+
+        <div class="a-baslik">
+            <h1>Aslı El Sanatları Atölyesi</h1>
+            <p>Geleneksel el emeğini modern atölye deneyimiyle buluşturuyoruz</p>
+        </div>
+
+        <nav class="a-menu">
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li class="a-hizmetlerimiz-acilir-menusu">
+                    <a href="#">Atölyelerimiz</a>
+                    <ul>
+                        <li><a href="#">Seramik</a></li>
+                        <li><a href="#">Dokuma</a></li>
+                        <li><a href="#">Cam ve Mozaik</a></li>
+                    </ul>
+                </li>
+                <li><a href="eserler.html" class="a-korumali-baglanti" data-hedef="eserler.html">Eserlerimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="a-kapak">
+        <img src="images/background_img.jpg" alt="El sanatları atölyesi kapak görseli" class="a-kapak-foto">
+        <div class="a-kapak-yazi">
+            <h2>Ellerimizle Üretiyoruz</h2>
+            <p>Seramikten dokumaya, her eser atölyemizde özenle hazırlanır.</p>
+        </div>
+    </section>
+
+    <main class="a-arka-plan">
+        <div class="a-icerikler">
+            <section class="a-icerik">
+                <h2>Atölyemize Hoş Geldiniz</h2>
+                <p>
+                    El Sanatları Atölyesi olarak seramik, dokuma ve cam işçiliği alanlarında
+                    uygulamalı eğitimler ve özgün eserler sunuyoruz. Amacımız geleneksel
+                    zanaatı yeni nesille buluşturmaktır.
+                </p>
+                <p class="a-spot-bilgi">
+                    “Her parça bir hikâye taşır; biz o hikâyeyi birlikte şekillendiriyoruz.”
+                </p>
+            </section>
+
+            <section class="a-hizmetlerimiz">
+                <h2 class="a-icerik" style="margin-bottom: 30px;">Atölye Alanlarımız</h2>
+                <div class="a-kartlar">
+                    <article class="a-kart">
+                        <h3><i class="fa-solid fa-mortar-pestle"></i> Seramik</h3>
+                        <p>Torna ve el şekillendirme ile çömlek, kase ve dekoratif objeler.</p>
+                    </article>
+                    <article class="a-kart">
+                        <h3><i class="fa-solid fa-scroll"></i> Dokuma</h3>
+                        <p>El tezgâhında kilim, yastık ve tekstil aksesuarları.</p>
+                    </article>
+                    <article class="a-kart">
+                        <h3><i class="fa-solid fa-gem"></i> Cam & Mozaik</h3>
+                        <p>Vitray ve mozaik ile renkli cam sanatı çalışmaları.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="a-icerik" style="margin-top: 50px;">
+                <h2>Atölye Tanıtım Videosu</h2>
+                <iframe
+                    class="a-youtube-video"
+                    src="https://www.youtube.com/embed/0K4-rpab5cY"
+                    title="El sanatları atölye tanıtımı"
+                    allowfullscreen>
+                </iframe>
+            </section>
+        </div>
+    </main>
+
+    <footer class="a-alt-menu">
+        <p> 
+            <i class="fa-solid fa-location-dot"></i> İstanbul &nbsp;|&nbsp;
+            <i class="fa-solid fa-phone"></i> 0212 000 00 00 &nbsp;|&nbsp;
+            <i class="fa-solid fa-envelope"></i> info@asliatolye.com
+        </p>
+        <p>&copy; 2026 Aslı El Sanatları Atölyesi — 251109073</p>
+    </footer>
+
+    <script src="js/a-oturum.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const oturum = await aOturumKontrol();
+            aUstButonGuncelle(document.getElementById('a-ust-buton'), oturum);
+            aKorumaliBaglantilariBagla();
+
+            if (oturum.basarili && oturum.kullanici && oturum.kullanici.rol === 'admin') {
+                const menu = document.querySelector('.a-menu ul');
+                const li = document.createElement('li');
+                li.innerHTML = '<a href="admin.html"><i class="fa-solid fa-gear"></i> Admin</a>';
+                menu.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>
